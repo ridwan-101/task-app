@@ -49,7 +49,7 @@ class TaskListViewModel with ChangeNotifier {
   Future<void> updateTask(Task task) async {
     try {
       await repository.updateTask(task);
-      await loadTasks(); // Refresh the list
+      await loadTasks();
     } catch (e) {
       rethrow;
     }
@@ -58,7 +58,7 @@ class TaskListViewModel with ChangeNotifier {
   Future<void> deleteTask(String id) async {
     try {
       await repository.deleteTask(id);
-      await loadTasks(); // Refresh the list
+      await loadTasks();
     } catch (e) {
       rethrow;
     }
@@ -77,7 +77,6 @@ class TaskListViewModel with ChangeNotifier {
   List<Task> _applyFilterAndSort(List<Task> tasks) {
     List<Task> filteredTasks = [...tasks];
 
-    // Apply filter
     switch (_filter) {
       case TaskFilter.completed:
         filteredTasks =
@@ -91,7 +90,6 @@ class TaskListViewModel with ChangeNotifier {
         break;
     }
 
-    // Apply sort
     switch (_sort) {
       case TaskSort.dueDate:
         filteredTasks.sort((a, b) => a.dueDate.compareTo(b.dueDate));

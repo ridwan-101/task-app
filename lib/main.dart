@@ -11,11 +11,9 @@ import 'package:task_app/presentation/views/task_list_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Hive with a valid directory
   await Hive.initFlutter();
   Hive.registerAdapter(TaskAdapter());
 
-  // Open the tasks box
   final taskBox = await Hive.openBox<Task>('tasks');
 
   runApp(
@@ -54,6 +52,7 @@ class MyApp extends StatelessWidget {
       title: 'Pocket Tasks',
       themeMode: ThemeMode.system,
       home: const TaskListScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

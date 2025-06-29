@@ -2,6 +2,9 @@
 
 A simple yet powerful task management app built with **Flutter**, using **Provider** for state management and **Hive** for offline local storage.
 
+<img width="1680" alt="image" src="https://github.com/user-attachments/assets/200244c0-0c1a-47d3-8b22-8603a36b9099" />
+
+
 ---
 
 ## ✨ Features
